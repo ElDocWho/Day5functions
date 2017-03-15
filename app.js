@@ -8,11 +8,10 @@ Test this function by hand in the console to get it working, and when you think 
 // Write your code here
 function sum(a,b){
   var suma = a + b;
-  var tot = [suma,'The sum of ' + a + ' and ' + b + ' equals ' + suma];
-  return tot;
+  return [suma,'The sum of ' + a + ' and ' + b + ' is ' + suma + '.'];
 }
-
-testSum(4, 7);
+sum(4,7);
+testSum(4,7);
 
 // Once you get the test passing, do an a-c-p cycle and synchronize the code between GitHub and your laptop. Don't forget to create a new branch for your work on the next question!
 
@@ -24,16 +23,11 @@ Test this function by hand in the console to get it working, and when you think 
 
 // Write your code here
 function multiply(a,b){
-  var atxt = a.toString();
-  var btxt = b.toString();
   var suma = a * b;
-  var tot = [suma,atxt + ' * ' + btxt];
-  return tot;
+  return [suma,'The product of ' + a + ' and ' + b + ' is ' + suma + '.'];
 }
 multiply(5,9);
-
-// Here is the test for multiply(); uncomment it to run it
-// testMultiply(5,9);
+testMultiply(5,9);
 
 // Once you get the test passing, do an a-c-p cycle and synchronize the code between GitHub and your laptop. Don't forget to create a new branch for your work on the next question!
 
