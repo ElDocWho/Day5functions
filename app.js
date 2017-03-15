@@ -53,7 +53,7 @@ function sumAndMultiply(a,b,c){
 sumAndMultiply(4,7,5);
 testSumAndMultiply(4,7,5);
 
-// Once you get the test passing, do an a-c-p cycle and synchronize the code between GitHub and your laptop. Don't forget to create a new branch for your work on the next question!
+// Once you et the test passing, do an a-c-p cycle and synchronize the code between GitHub and your laptop. Don't forget to create a new branch for your work on the next question!
 
 /////////////////////////////////////
 /* Problem 4
@@ -66,19 +66,15 @@ Test this function by hand in the console to get it working, and when you think 
 var testArray = [2,3,4];
 
 function sumArray(testArray){
-  var a = (parseInt(testArray[0]));
-  var b = (parseInt(testArray[1]));
-  var c = (parseInt(testArray[2]));
-  var suma = a + b + c;
-  var tot = [suma,testArray[0] + ' + ' + testArray[1] + ' + ' + testArray[2]];
-  var tot = suma;
-  return tot;
+  var resp1 = su(testArray[0],testArray[1]);
+  var resp2 = su(testArray[2],resp1);
+  return [resp2, testArray[0] + ',' + testArray[1] + ',' + testArray[2] + ' was passed in as an array of numbers, and ' + resp2 + ' is their sum.'];
 }
 sumArray(2,3,4);
 
 // Here is the test for sumArray(); uncomment it to run it
 
-// testSumArray(testArray);
+testSumArray(testArray);
 
 // Once you get the test passing, do an a-c-p cycle and synchronize the code between GitHub and your laptop. Don't forget to create a new branch for your work on the next question!
 
@@ -90,10 +86,12 @@ IMPORTANT DETAIL: You may not use the arithmetic operator * in this function. To
 Test this function by hand in the console to get it working, and when you think it is finished, uncomment the call for the testMultiplyArray() function and see if the test passes.*/
 
 // Write your code here
-function multiplyArray(testArray){ //eslint-disable-line
-
+function multiplyArray(testArray){
+  var resp1 = mult(testArray[0],testArray[1]);
+  var resp2 = mult(testArray[2],resp1);
+  return [resp2, 'The numbers ' + testArray[0] + ',' + testArray[1] + ',' + testArray[2] + ' have a product of ' + resp2 + '.'];
 }
-// Here is the test for multiplyArray(); uncomment it to run it
-// testMultiplyArray(2,3,4);
+multiplyArray(2,3,4);
+testMultiplyArray(2,3,4);
 
 // Once you get the test passing, do an a-c-p cycle and synchronize the code between GitHub and your laptop. You're done! Submit the link to the repo following the instructions in Canvas.
