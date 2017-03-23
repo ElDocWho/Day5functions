@@ -5,11 +5,8 @@ Write a function called sum() that takes in two numbers as arguments and then re
 "The sum of 4 and 7 is 11."
 Test this function by hand in the console to get it working, and when you think it is finished, uncomment the call for the testSum() function below and check the console to see if the test passes.*/
 
-function su(a,b){
-  return a + b;
-}
 function sum(a,b){
-  var suma = su(a,b);
+  var suma = a + b;
   return [suma,'The sum of ' + a + ' and ' + b + ' is ' + suma + '.'];
 }
 sum(4,7);
@@ -22,18 +19,14 @@ testSum(4,7);
 Write a function called multiply() that takes in two numbers as arguments and returns an array where the first element is the product of those numbers, and the second element is a string that EXACTLY follows this example and uses the values that were input into the function:
 "The product of 5 and 9 is 45."
 Test this function by hand in the console to get it working, and when you think it is finished, uncomment the call for the testMultiply() function and see if the test passes.*/
-
-function mult(a,b){
-  return a * b;
-}
 function multiply(a,b){
-  var suma = mult(a,b);
+  var suma = a * b;
   return [suma,'The product of ' + a + ' and ' + b + ' is ' + suma + '.'];
 }
 multiply(5,9);
 testMultiply(5,9);
 
-// Once yu get the test passing, do an a-c-p cycle and synchronize the code between GitHub and your laptop. Don't forget to create a new branch for your work on the next question!
+// Once you get the test passing, do an a-c-p cycle and synchronize the code between GitHub and your laptop. Don't forget to create a new branch for your work on the next question!
 
 /////////////////////////////////////
 /* Problem 3
@@ -44,11 +37,11 @@ IMPORTANT DETAIL: You may not use the arithmetic operators + and * in this funct
 Test this function by hand in the console to get it working, and when you think it is finished, uncomment the call for the testSumAndMultiply() function and see if the test passes.*/
 
 function sumAndMultiply(a,b,c){
-  var res1 = su(a, b);
-  var res2 = su(res1, c);
-  var res3 = mult(a, b);
-  var res4 = mult(c, res3);
-  return [res2, res4, a + ' and ' + b + ' and ' + c + ' sum to ' + res2 + '.', 'The product of ' + a + ' and ' + b + ' and ' + c + ' is ' + res4 + '.'];
+  var res1 = sum(a,b);
+  var res2 = sum(res1[0], c);
+  var res3 = multiply(a,b);
+  var res4 = multiply(c,res3[0]);
+  return [res2, res4, a + ' and ' + b + ' and ' + c + ' sum to ' + res2[0] + '.', 'The product of ' + a + ' and ' + b + ' and ' + c + ' is ' + res4[0] + '.'];
 }
 sumAndMultiply(4,7,5);
 testSumAndMultiply(4,7,5);
@@ -66,11 +59,11 @@ Test this function by hand in the console to get it working, and when you think 
 var testArray = [2,3,4];
 
 function sumArray(testArray){
-  var resp1 = su(testArray[0],testArray[1]);
-  var resp2 = su(testArray[2],resp1);
-  return [resp2, testArray[0] + ',' + testArray[1] + ',' + testArray[2] + ' was passed in as an array of numbers, and ' + resp2 + ' is their sum.'];
+  var resp1 = sum(testArray[0],testArray[1]);
+  var resp2 = sum(resp1[0],testArray[2]);
+  return [resp2[0], testArray[0] + ',' + testArray[1] + ',' + testArray[2] + ' was passed in as an array of numbers, and ' + resp2[0] + ' is their sum.'];
 }
-sumArray(2,3,4);
+sumArray(testArray);
 
 // Here is the test for sumArray(); uncomment it to run it
 
@@ -87,11 +80,11 @@ Test this function by hand in the console to get it working, and when you think 
 
 // Write your code here
 function multiplyArray(testArray){
-  var resp1 = mult(testArray[0],testArray[1]);
-  var resp2 = mult(testArray[2],resp1);
-  return [resp2, 'The numbers ' + testArray[0] + ',' + testArray[1] + ',' + testArray[2] + ' have a product of ' + resp2 + '.'];
+  var resp1 = multiply(testArray[0],testArray[1]);
+  var resp2 = multiply(resp1[0],testArray[2]);
+  return [resp2[0], 'The numbers ' + testArray[0] + ',' + testArray[1] + ',' + testArray[2] + ' have a product of ' + resp2[0] + '.'];
 }
-multiplyArray(2,3,4);
-testMultiplyArray(2,3,4);
+multiplyArray(testArray);
+testMultiplyArray(testArray);
 
-// Once you get the test passing, do an a-c-p cycle and synchronize the code between GitHub and your laptop. You're done! Submit the link to the repo following the instructions in Canvas.
+// Once you get the testestArrayt passing, do an a-c-p cycle and synchronize the code between GitHub and your laptop. You're done! Submit the link to the repo following the instructions in Canvas.
